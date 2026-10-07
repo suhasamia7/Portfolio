@@ -22,7 +22,7 @@ export default function Contact() {
     <div className="max-w-2xl">
       <p className="text-lg leading-relaxed text-muted">
         I&apos;m looking for software engineering, AI/ML and backend roles, including
-        graduate roles, and I&apos;m open to opportunities in any country. The best way
+        graduate roles, and I&apos;m open to opportunities and i am willing to relocate. The best way
         to reach me is by email.
       </p>
 
