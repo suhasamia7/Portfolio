@@ -4,6 +4,10 @@ import { profile } from '../data/profile'
 export default function Contact() {
   const [copied, setCopied] = useState(false)
 
+  const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+    profile.email,
+  )}&su=${encodeURIComponent('Hello Samia')}`
+
   async function copyEmail() {
     try {
       await navigator.clipboard.writeText(profile.email)
@@ -21,21 +25,17 @@ export default function Contact() {
         graduate roles in Ireland. The best way to reach me is by email.
       </p>
 
-      <p className="mt-6">
-        <a
-          href={`mailto:${profile.email}`}
-          className="text-xl font-semibold underline underline-offset-4 hover:opacity-80"
-        >
-          {profile.email}
-        </a>
-      </p>
+      <p className="mt-6 text-xl font-semibold">{profile.email}</p>
 
       <div className="mt-8 flex flex-wrap items-center gap-3">
         <a
-          href={`mailto:${profile.email}`}
+          href={gmailLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Write an email in Gmail (opens in a new tab)"
           className="inline-flex items-center justify-center rounded-md bg-accent px-5 py-3 text-sm font-medium text-accent-fg transition-colors hover:opacity-90"
         >
-          Send an email
+          Write an email
         </a>
 
         <button
