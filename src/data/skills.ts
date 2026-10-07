@@ -54,4 +54,4 @@ export const skillGroups: SkillGroup[] = [
 
 // Technologies you are currently learning or building with.
 // If you have not started Spring Boot yet, change this to: []
-export const inProgressSkills: string[] = ['Spring Boot']
+export const inProgressSkills: string[] = []

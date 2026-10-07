@@ -1,10 +1,22 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { navLinks } from '../data/navigation'
 import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  // Pressing Escape closes the mobile menu
+  useEffect(() => {
+    if (!menuOpen) return
+
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') setMenuOpen(false)
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [menuOpen])
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur">

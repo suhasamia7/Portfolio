@@ -8,12 +8,11 @@ export type Project = {
   summary: string
   highlights?: string[]
   tech: string[]
-  repoUrl?: string // add later: the button only appears when this exists
+  repoUrl?: string 
   demoUrl?: string // add later: the button only appears when this exists
 }
 
-// Set to false to hide the planned projects until they are built
-export const showPlannedProjects = true
+export const showPlannedProjects = false
 
 export const projects: Project[] = [
   {
